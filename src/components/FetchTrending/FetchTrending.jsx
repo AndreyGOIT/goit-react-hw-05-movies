@@ -26,7 +26,7 @@ export default function FetchTrending() {
         <ul>
           {movies.map(movie => (
             <li key={movie.id.toString()}>
-              <Link to={`${movie.id}`}>{movie.title}</Link>
+              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
 
               {/* <Link to={`${url}/${movie.id}`}>{movie.title}</Link> */}
             </li>
