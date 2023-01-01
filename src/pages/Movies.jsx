@@ -1,4 +1,12 @@
+import { useState, useEffect } from 'react';
+import { fetchEvents } from 'sevices/eventsAPI';
+
 export const Movies = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetchEvents().then(setEvents);
+  }, []);
   return (
     <main>
       <form>
