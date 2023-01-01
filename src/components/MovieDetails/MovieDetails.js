@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 // import axios from 'axios';
 import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 export default function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     fetchEventsById(movieId).then(setMovie);
@@ -27,6 +29,13 @@ export default function MovieDetails() {
   console.log(movie);
   return (
     <>
+      <button
+        onClick={() => {
+          navigate(location?.state?.from ?? '/');
+        }}
+      >
+        Go back
+      </button>
       <p>страница фильма</p>
       {/* <h2>{movie.original_title}</h2>
       <p>Overview: {movie.overview}</p> */}

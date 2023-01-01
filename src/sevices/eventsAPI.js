@@ -27,7 +27,7 @@ export async function fetchEventsById(id) {
 }
 
 export async function fetchEventsByName(keyword) {
-  const response = await axios(`https://api.themoviedb.org/3/movie/`, {
+  const response = await axios(`https://api.themoviedb.org/3/movie/top_rated`, {
     params: {
       apikey: KEY,
       keyword,

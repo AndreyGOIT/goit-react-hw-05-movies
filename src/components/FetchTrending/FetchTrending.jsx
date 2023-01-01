@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 // import { useRouteMatch } from 'react-router-dom';
 
 export default function FetchTrending() {
@@ -8,6 +8,7 @@ export default function FetchTrending() {
   // const url = 'https://api.themoviedb.org/3/movie/';
   //   const { url } = useRouteMatch();
   const [movies, setMovies] = useState(null);
+  const location = useLocation;
 
   useEffect(() => {
     axios
@@ -27,7 +28,9 @@ export default function FetchTrending() {
           <ul>
             {movies.map(({ id, title }) => (
               <li key={id.toString()}>
-                <Link to={`/movies/${id}`}>{title}</Link>
+                <Link to={`/movies/${id}`} state={location.state}>
+                  {title}
+                </Link>
 
                 {/* <Link to={`${url}/${movie.id}`}>{movie.title}</Link> */}
               </li>
