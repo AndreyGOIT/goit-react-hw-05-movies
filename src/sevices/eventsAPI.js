@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// const KEY = '1eb36deae800d0e3d9fd1b0466458d26';
+const KEY = '1eb36deae800d0e3d9fd1b0466458d26';
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3/trending/';
 
 export async function fetchEvents() {
@@ -23,5 +23,15 @@ export async function fetchEventsById(id) {
   const response = await axios(
     `https://api.themoviedb.org/3/movie/${id}?api_key=1eb36deae800d0e3d9fd1b0466458d26&language=en-US`
   );
+  return response.data;
+}
+
+export async function fetchEventsByName(keyword) {
+  const response = await axios(`https://api.themoviedb.org/3/movie/`, {
+    params: {
+      apikey: KEY,
+      keyword,
+    },
+  });
   return response.data;
 }
