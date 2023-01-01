@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 // import { useRouteMatch } from 'react-router-dom';
 
 export default function FetchTrending() {
@@ -23,15 +23,18 @@ export default function FetchTrending() {
   return (
     <>
       {movies && (
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id.toString()}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+        <>
+          <ul>
+            {movies.map(({ id, title }) => (
+              <li key={id.toString()}>
+                <Link to={`/movies/${id}`}>{title}</Link>
 
-              {/* <Link to={`${url}/${movie.id}`}>{movie.title}</Link> */}
-            </li>
-          ))}
-        </ul>
+                {/* <Link to={`${url}/${movie.id}`}>{movie.title}</Link> */}
+              </li>
+            ))}
+          </ul>
+          <Outlet />
+        </>
       )}
     </>
   );

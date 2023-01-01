@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from '../pages/Home';
 import { Movies } from '../pages/Movies';
-// import MovieDetails from '../components/MovieDetails/MovieDetails';
+import MovieDetails from '../components/MovieDetails/MovieDetails';
+// import { MovieSubPage } from 'pages/MovieSubPage';
 // import MovieDetailsAlt from '../components/MovieDetails/MovieDetailsAlt';
 import { Container } from './App.styled';
 
@@ -21,7 +22,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="Movies" element={<Movies />} />
+          <Route path="movies" element={<Movies />}>
+            <Route path=":moviesId" element={MovieDetails} />
+          </Route>
         </Route>
         {/* <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />} /> */}

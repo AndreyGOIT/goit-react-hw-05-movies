@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
@@ -6,10 +6,12 @@ export const Navigation = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <Link to="/" end>
+              Home
+            </Link>
           </li>
           <li>
-            <NavLink to="/movies">Movies</NavLink>
+            <Link to="/movies">Movies</Link>
           </li>
         </ul>
       </nav>

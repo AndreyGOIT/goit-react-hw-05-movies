@@ -7,6 +7,7 @@ export const Movies = () => {
   useEffect(() => {
     fetchEvents().then(setEvents);
   }, []);
+  console.log(events);
   return (
     <main>
       <form>
