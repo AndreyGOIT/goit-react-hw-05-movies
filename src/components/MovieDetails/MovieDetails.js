@@ -4,7 +4,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
 
-export default function MovieDetails() {
+export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
@@ -46,7 +46,9 @@ export default function MovieDetails() {
       <hr />
       <p>Additional information</p>
       <Link to="cast">Cast</Link>
+      <br />
+      <Link to="reviews">Reviews</Link>
       <hr />
     </>
   );
-}
+};

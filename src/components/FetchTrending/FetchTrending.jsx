@@ -31,8 +31,6 @@ export default function FetchTrending() {
                 <Link to={`/movies/${id}`} state={location.state}>
                   {title}
                 </Link>
-
-                {/* <Link to={`${url}/${movie.id}`}>{movie.title}</Link> */}
               </li>
             ))}
           </ul>

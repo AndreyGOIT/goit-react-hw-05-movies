@@ -1,10 +1,11 @@
 import { Link } from './Navigation.styled';
+import styles from './Navigation.module.css';
 
 export const Navigation = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul className={styles.navigation}>
           <li>
             <Link to="/" end>
               Home
@@ -14,6 +15,7 @@ export const Navigation = () => {
             <Link to="/movies">Movies</Link>
           </li>
         </ul>
+        <hr />
       </nav>
     </>
   );
