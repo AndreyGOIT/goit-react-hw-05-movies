@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-// import axios from 'axios';
 import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
 
@@ -13,19 +12,7 @@ export const MovieDetails = () => {
   useEffect(() => {
     fetchEventsById(moviesId).then(setMovie);
   }, [moviesId]);
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/${movieId}?api_key=1eb36deae800d0e3d9fd1b0466458d26`
-  //     )
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //       setMovie(response.data);
-  //     });
-  // }, [movieId]);
-  // console.log(movie);
-  // console.log(movieId);
-  // console.log(movie.poster_path);
+
   console.log(movie);
   return (
     <>
