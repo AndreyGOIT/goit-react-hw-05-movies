@@ -13,7 +13,7 @@ export const Movies = () => {
     async function fetchEvent() {
       console.log(query);
       const data = await fetchEventsByName(query);
-      setEvents(data);
+      setEvents(data.results);
     }
     fetchEvent();
   }, [query]);
@@ -35,10 +35,9 @@ export const Movies = () => {
       {events && (
         <>
           <ul>
-            {events.map(({ id, title }) => (
+            {events.map(({ id, name }) => (
               <li key={id}>
-                <p>Detailed info about film</p>
-                <Link to={id}>{title}</Link>
+                <Link to={`/movies/${id}`}>{name}</Link>
               </li>
             ))}
           </ul>

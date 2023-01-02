@@ -1,7 +1,9 @@
+import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from 'sevices/eventsAPI';
 
 export const Reviews = () => {
-  const events = fetchMoviesReviews();
+  const { moviesId } = useParams();
+  const events = fetchMoviesReviews(moviesId);
   return (
     <>
       {events ? (

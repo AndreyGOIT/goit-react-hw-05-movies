@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const KEY = '1eb36deae800d0e3d9fd1b0466458d26';
+// const KEY = '1eb36deae800d0e3d9fd1b0466458d26';
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3/trending/';
 
 export async function fetchEvents() {
@@ -26,13 +26,15 @@ export async function fetchEventsById(id) {
   return response.data;
 }
 
-export async function fetchEventsByName(keyword) {
-  const response = await axios(`https://api.themoviedb.org/3/movie/top_rated`, {
-    params: {
-      apikey: KEY,
-      keyword,
-    },
-  });
+export async function fetchEventsByName(query) {
+  const response = await axios(
+    `https://api.themoviedb.org/3/search/keyword?api_key=1eb36deae800d0e3d9fd1b0466458d26&page=1`,
+    {
+      params: {
+        query,
+      },
+    }
+  );
   return response.data;
 }
 
