@@ -5,14 +5,14 @@ import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  const { movieId } = useParams();
+  const { moviesId } = useParams();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    fetchEventsById(movieId).then(setMovie);
-  }, [movieId]);
+    fetchEventsById(moviesId).then(setMovie);
+  }, [moviesId]);
   // useEffect(() => {
   //   axios
   //     .get(
@@ -37,18 +37,19 @@ export const MovieDetails = () => {
         Go back
       </button>
       <p>страница фильма</p>
-      {/* <h2>{movie.original_title}</h2>
-      <p>Overview: {movie.overview}</p> */}
-
-      {/* <img src="{movie.poster_path}" alt="{movie.original_title}" /> */}
-
-      {/* <p>Genres: {movie.genres}</p> */}
-      <hr />
-      <p>Additional information</p>
-      <Link to="cast">Cast</Link>
-      <br />
-      <Link to="reviews">Reviews</Link>
-      <hr />
+      {movie && (
+        <>
+          <h2>{movie.original_title}</h2>
+          <p>Overview: {movie.overview}</p>
+          <img src={movie.poster_path} alt={movie.original_title} />
+          <hr />
+          <p>Additional information</p>
+          <Link to="cast">Cast</Link>
+          <br />
+          <Link to="reviews">Reviews</Link>
+          <hr />
+        </>
+      )}
     </>
   );
 };
