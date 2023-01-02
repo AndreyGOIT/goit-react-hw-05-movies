@@ -1,15 +1,29 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { fetchEventsById } from 'sevices/eventsAPI';
 
 export const Cast = () => {
   const { moviesId } = useParams();
-  const event = fetchEventsById(moviesId);
+  const [details, setDetails] = useState(null);
+
+  useEffect(() => {
+    fetchEventsById(moviesId).then(setDetails);
+  }, [moviesId]);
+
   return (
     <>
-      {event ? (
-        <h2>{event.cast}</h2>
+      {details ? (
+        <ul>
+          {details.map(({ release_date, id, revenue, runtime }) => (
+            <li key={id}>
+              <p>Release date: {release_date}</p>
+              <p>Revenue: {revenue}</p>
+              <p>Runtime: {runtime} min</p>
+            </li>
+          ))}
+        </ul>
       ) : (
-        <p>We have no information about actors, sorry.</p>
+        <p>There are no any details, sorry.</p>
       )}
     </>
   );
