@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, Outlet, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
 
 export const Movies = () => {
   const [events, setEvents] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('eventname');
-  const location = useLocation();
 
   useEffect(() => {
     if (query === null || query === '') return;
 
     async function fetchEvent() {
+      console.log(query);
       const data = await fetchEventsByName(query);
       setEvents(data);
     }
@@ -38,9 +38,7 @@ export const Movies = () => {
             {events.map(({ id, title }) => (
               <li key={id}>
                 <p>Detailed info about film</p>
-                <Link to={id} state={{ from: location }}>
-                  {title}
-                </Link>
+                <Link to={id}>{title}</Link>
               </li>
             ))}
           </ul>

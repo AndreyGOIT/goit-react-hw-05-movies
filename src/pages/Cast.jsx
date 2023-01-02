@@ -1,7 +1,9 @@
+import { useParams } from 'react-router-dom';
 import { fetchEventsById } from 'sevices/eventsAPI';
 
 export const Cast = () => {
-  const event = fetchEventsById();
+  const { moviesId } = useParams();
+  const event = fetchEventsById(moviesId);
   return (
     <>
       {event ? (
