@@ -39,9 +39,21 @@ export const MovieDetails = () => {
       <p>страница фильма</p>
       {movie && (
         <>
+          <img
+            src={movie.poster_path}
+            alt={movie.original_title}
+            width="200"
+            height="300"
+          />
           <h2>{movie.original_title}</h2>
-          <p>Overview: {movie.overview}</p>
-          <img src={movie.poster_path} alt={movie.original_title} />
+          <b>Overview: </b>
+          <p>{movie.overview}</p>
+          <b>Genres:</b>
+          {movie.genres.map(({ name, index }) => (
+            <ul>
+              <li key={index}>{name}</li>
+            </ul>
+          ))}
           <hr />
           <p>Additional information</p>
           <Link to="cast">Cast</Link>

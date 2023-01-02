@@ -35,3 +35,12 @@ export async function fetchEventsByName(keyword) {
   });
   return response.data;
 }
+
+export async function fetchMoviesReviews(id) {
+  const response = await axios(
+    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=1eb36deae800d0e3d9fd1b0466458d26&language=en-US&page=1`
+  );
+  return response.data;
+}
+
+// https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=1eb36deae800d0e3d9fd1b0466458d26&language=en-US&page=1
