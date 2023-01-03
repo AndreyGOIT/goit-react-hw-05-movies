@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,11 @@ export const MovieDetails = () => {
     fetchEventsById(moviesId).then(setMovie);
   }, [moviesId]);
 
-  console.log(movie);
+  // const imageBaseUrl = 'https://image.tmdb.org/t/p/w154';
+  // const poster = movie.poster_path;
+  // const fullPath = imageBaseUrl + poster;
+  // console.log(movie);
+  // console.log(fullPath);
   return (
     <>
       <button
@@ -23,11 +27,12 @@ export const MovieDetails = () => {
       >
         Go back
       </button>
-      <p>страница фильма</p>
+      <br />
       {movie && (
         <>
           <img
             src={movie.poster_path}
+            // src={fullPath}
             alt={movie.original_title}
             width="200"
             height="300"
@@ -42,10 +47,13 @@ export const MovieDetails = () => {
             </ul>
           ))}
           <hr />
-          <p>Additional information</p>
-          <Link to="cast">Cast</Link>
-          <br />
-          <Link to="reviews">Reviews</Link>
+          <>
+            <p>Additional information</p>
+            <Link to="cast">Cast</Link>
+            <br />
+            <Link to="reviews">Reviews</Link>
+            <Outlet />
+          </>
           <hr />
         </>
       )}
