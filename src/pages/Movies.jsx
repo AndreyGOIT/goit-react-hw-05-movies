@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Link, Outlet, useSearchParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
 
 export const Movies = () => {
   const [events, setEvents] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('eventname');
+
+  const location = useLocation;
 
   useEffect(() => {
     if (query === null || query === '') return;
@@ -38,7 +40,9 @@ export const Movies = () => {
           <ul>
             {events.map(({ id, original_title }) => (
               <li key={id}>
-                <Link to={`/movies/${id}`}>{original_title}</Link>
+                <Link to={`/movies/${id}`} state={location.state}>
+                  {original_title}
+                </Link>
               </li>
             ))}
           </ul>
