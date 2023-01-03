@@ -10,18 +10,16 @@ export const Cast = () => {
     fetchEventsById(moviesId).then(setDetails);
   }, [moviesId]);
 
+  // console.log(details);
   return (
     <>
       {details ? (
-        <ul>
-          {details.map(({ release_date, id, revenue, runtime }) => (
-            <li key={id}>
-              <p>Release date: {release_date}</p>
-              <p>Revenue: {revenue}</p>
-              <p>Runtime: {runtime} min</p>
-            </li>
-          ))}
-        </ul>
+        <>
+          <hr />
+          <p>Release date: {details.release_date}</p>
+          <p>Revenue: {details.revenue} $</p>
+          <p>Runtime: {details.runtime} min</p>
+        </>
       ) : (
         <p>There are no any details, sorry.</p>
       )}

@@ -10,12 +10,13 @@ export const Reviews = () => {
   useEffect(() => {
     fetchMoviesReviews(moviesId).then(setReviewsArr);
   }, [moviesId]);
-
+  // console.log(reviewsArr);
   return (
     <>
+      <hr />
       {reviewsArr ? (
         <ul>
-          {reviewsArr.map(({ author, id, created_at, content }) => (
+          {reviewsArr.results.map(({ author, id, created_at, content }) => (
             <li key={id}>
               <h3>Author: {author}</h3>
               <p>date: {created_at}</p>
