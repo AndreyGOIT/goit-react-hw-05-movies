@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
+import styles from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
   const { moviesId } = useParams();
@@ -13,11 +14,6 @@ export const MovieDetails = () => {
     fetchEventsById(moviesId).then(setMovie);
   }, [moviesId]);
 
-  // const imageBaseUrl = 'https://image.tmdb.org/t/p/w154';
-  // const poster = movie.poster_path;
-  // const fullPath = imageBaseUrl + poster;
-  // console.log(movie);
-  // console.log(fullPath);
   return (
     <>
       <button
@@ -30,22 +26,27 @@ export const MovieDetails = () => {
       <br />
       {movie && (
         <>
-          <img
-            src={movie.poster_path}
-            // src={fullPath}
-            alt={movie.original_title}
-            width="200"
-            height="300"
-          />
-          <h2>{movie.original_title}</h2>
-          <b>Overview: </b>
-          <p>{movie.overview}</p>
-          <b>Genres:</b>
-          {movie.genres.map(({ name, index }) => (
-            <ul>
-              <li key={index}>{name}</li>
-            </ul>
-          ))}
+          <div className={styles.wrapper}>
+            <img
+              src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
+              alt={movie.original_title}
+              width="200"
+              height="300"
+            />
+            <div>
+              <h2 className={styles.title}>{movie.original_title}</h2>
+              <br />
+              <b>Overview: </b>
+              <p>{movie.overview}</p>
+              <b>Genres:</b>
+              <ul>
+                {movie.genres.map(({ name, index }) => (
+                  <li key={index}>{name}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
           <hr />
           <>
             <p>Additional information</p>

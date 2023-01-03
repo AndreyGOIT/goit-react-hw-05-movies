@@ -1,24 +1,36 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { fetchEventsById } from 'sevices/eventsAPI';
+import { fetchMoviesCast } from 'sevices/eventsAPI';
 
 export const Cast = () => {
   const { moviesId } = useParams();
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
-    fetchEventsById(moviesId).then(setDetails);
+    fetchMoviesCast(moviesId).then(setDetails);
   }, [moviesId]);
 
-  // console.log(details);
+  console.log(details);
+  // const cast = details.cast;
+  // console.log(cast);
   return (
     <>
       {details ? (
         <>
           <hr />
-          <p>Release date: {details.release_date}</p>
-          <p>Revenue: {details.revenue} $</p>
-          <p>Runtime: {details.runtime} min</p>
+          <ul>
+            {details.map(({ id, character, name, profile_path }) => (
+              <li key={id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w154${profile_path}`}
+                  alt={name}
+                />
+                <br />
+                <b>{name}</b>
+                <p>Character: {character}</p>
+              </li>
+            ))}
+          </ul>
         </>
       ) : (
         <p>There are no any details, sorry.</p>
