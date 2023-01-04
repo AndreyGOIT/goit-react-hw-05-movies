@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.1656bd0c.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.56c764e7.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.177a5f63.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.b57b3ac7.js",
+    "static/css/853.de5dc10e.chunk.css": "/goit-react-hw-05-movies/static/css/853.de5dc10e.chunk.css",
+    "static/js/853.42bfed40.chunk.js": "/goit-react-hw-05-movies/static/js/853.42bfed40.chunk.js",
     "static/media/gamerwall-pro-p-kinematograf-minimalizm-oboi-krasivo-17.jpeg": "/goit-react-hw-05-movies/static/media/gamerwall-pro-p-kinematograf-minimalizm-oboi-krasivo-17.a50b3b4472fed8e54175.jpeg",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.1656bd0c.css.map": "/goit-react-hw-05-movies/static/css/main.1656bd0c.css.map",
-    "main.56c764e7.js.map": "/goit-react-hw-05-movies/static/js/main.56c764e7.js.map"
+    "main.177a5f63.css.map": "/goit-react-hw-05-movies/static/css/main.177a5f63.css.map",
+    "main.b57b3ac7.js.map": "/goit-react-hw-05-movies/static/js/main.b57b3ac7.js.map",
+    "853.de5dc10e.chunk.css.map": "/goit-react-hw-05-movies/static/css/853.de5dc10e.chunk.css.map",
+    "853.42bfed40.chunk.js.map": "/goit-react-hw-05-movies/static/js/853.42bfed40.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1656bd0c.css",
-    "static/js/main.56c764e7.js"
+    "static/css/main.177a5f63.css",
+    "static/js/main.b57b3ac7.js"
   ]
 }
