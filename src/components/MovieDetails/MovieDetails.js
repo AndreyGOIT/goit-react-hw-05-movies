@@ -53,8 +53,8 @@ export const MovieDetails = () => {
             <Link to="cast">Cast</Link>
             <br />
             <Link to="reviews">Reviews</Link>
-            <Outlet />
           </div>
+          <Outlet />
           <hr />
         </>
       )}

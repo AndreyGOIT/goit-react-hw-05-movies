@@ -25,18 +25,6 @@ export const App = () => {
 
         <Route path="*" element={<Home />} />
       </Routes>
-
-      {/* <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />}>
-            <Route path=":moviesId" element={MovieDetails} />
-          </Route>
-          <Route path="/movies/:movieId/cast" element={<Cast />} />
-        </Route>
-        <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-        <Route path="*" element={<Home />} />
-      </Routes> */}
     </Container>
   );
 };
