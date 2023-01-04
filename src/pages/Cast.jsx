@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchMoviesCast } from 'sevices/eventsAPI';
+import styles from '../pages/Cast.module.css';
 
 export const Cast = () => {
   const { moviesId } = useParams();
@@ -18,16 +19,18 @@ export const Cast = () => {
       {details ? (
         <>
           <hr />
-          <ul>
+          <ul className={styles.castList}>
             {details.map(({ id, character, name, profile_path }) => (
-              <li key={id.toString()}>
+              <li className={styles.listElem} key={id.toString()}>
                 <img
                   src={`https://image.tmdb.org/t/p/w154${profile_path}`}
                   alt={name}
                 />
-                <br />
-                <b>{name}</b>
-                <p>Character: {character}</p>
+                <div className={styles.listElemBottom}>
+                  {/* <br /> */}
+                  <b>{name}</b>
+                  <p>Character: {character}</p>
+                </div>
               </li>
             ))}
           </ul>

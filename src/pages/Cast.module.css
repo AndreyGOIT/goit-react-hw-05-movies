@@ -1,0 +1,15 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.listElem {
+  display: flex;
+  flex-direction: column;
+  width: 154px;
+}
+.listElemBottom {
+  height: 85px;
+  padding: 4px;
+  background-color: rgb(227, 225, 225);
+}

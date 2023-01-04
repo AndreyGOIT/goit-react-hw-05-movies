@@ -45,7 +45,7 @@ export const Movies = () => {
       </form>
       {events && (
         <>
-          <ul>
+          <ol>
             {events.map(({ id, original_title }) => (
               <li key={id}>
                 <Link to={`/movies/${id}`} state={location.state}>
@@ -53,7 +53,7 @@ export const Movies = () => {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ol>
           <Outlet />
         </>
       )}

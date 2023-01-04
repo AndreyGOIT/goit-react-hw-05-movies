@@ -13,3 +13,8 @@ button {
 .arrow {
   font-size: large;
 }
+.addInfoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

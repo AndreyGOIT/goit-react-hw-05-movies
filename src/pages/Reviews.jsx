@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from 'sevices/eventsAPI';
+import styles from '../pages/Reviews.module.css';
 
 export const Reviews = () => {
   const { moviesId } = useParams();
@@ -17,10 +18,10 @@ export const Reviews = () => {
       {reviewsArr ? (
         <ul>
           {reviewsArr.results.map(({ author, id, created_at, content }) => (
-            <li key={id.toString()}>
+            <li className={styles.listEl} key={id.toString()}>
               <h3>Author: {author}</h3>
-              <p>date: {created_at}</p>
               <p>{content}</p>
+              <p>date: {created_at}</p>
             </li>
           ))}
         </ul>

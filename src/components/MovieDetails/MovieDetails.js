@@ -48,13 +48,13 @@ export const MovieDetails = () => {
           </div>
 
           <hr />
-          <>
-            <p>Additional information</p>
+          <div className={styles.addInfoWrapper}>
+            <p>Additional information:</p>
             <Link to="cast">Cast</Link>
             <br />
             <Link to="reviews">Reviews</Link>
             <Outlet />
-          </>
+          </div>
           <hr />
         </>
       )}
