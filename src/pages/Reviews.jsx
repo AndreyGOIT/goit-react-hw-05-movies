@@ -17,7 +17,7 @@ export const Reviews = () => {
       {reviewsArr ? (
         <ul>
           {reviewsArr.results.map(({ author, id, created_at, content }) => (
-            <li key={id}>
+            <li key={id.toString()}>
               <h3>Author: {author}</h3>
               <p>date: {created_at}</p>
               <p>{content}</p>

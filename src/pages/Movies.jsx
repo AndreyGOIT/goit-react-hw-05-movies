@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
+import styles from '../pages/Movies.module.css';
 
 export const Movies = () => {
   const [events, setEvents] = useState([]);
@@ -13,9 +14,9 @@ export const Movies = () => {
     if (query === null || query === '') return;
 
     async function fetchEvent() {
-      // console.log(query);
+      console.log(query);
       const data = await fetchEventsByName(query);
-      // console.log(data);
+      console.log(data);
       setEvents(data.results);
     }
     fetchEvent();
@@ -32,8 +33,15 @@ export const Movies = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="query"></input>
-        <button>Search</button>
+        <input
+          className={styles.input}
+          type="text"
+          name="query"
+          placeholder="enter movie name"
+        ></input>
+        <button className={styles.button}>
+          <b>SEARCH</b>
+        </button>
       </form>
       {events && (
         <>

@@ -20,7 +20,7 @@ export const Cast = () => {
           <hr />
           <ul>
             {details.map(({ id, character, name, profile_path }) => (
-              <li key={id}>
+              <li key={id.toString()}>
                 <img
                   src={`https://image.tmdb.org/t/p/w154${profile_path}`}
                   alt={name}

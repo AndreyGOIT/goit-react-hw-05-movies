@@ -21,7 +21,7 @@ export const MovieDetails = () => {
           navigate(location?.state?.from ?? '/');
         }}
       >
-        Go back
+        <b className={styles.arrow}>‹-</b> GO BACK
       </button>
       <br />
       {movie && (

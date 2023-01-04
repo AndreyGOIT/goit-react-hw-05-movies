@@ -6,3 +6,10 @@
   display: inline-flex;
   margin-top: 0px;
 }
+button {
+  margin-bottom: 10px;
+  background-color: rgb(185, 182, 182);
+}
+.arrow {
+  font-size: large;
+}
