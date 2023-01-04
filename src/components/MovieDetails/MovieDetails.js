@@ -13,7 +13,7 @@ export const MovieDetails = () => {
   useEffect(() => {
     fetchEventsById(moviesId).then(setMovie);
   }, [moviesId]);
-
+  console.log(movie);
   return (
     <>
       <button
@@ -40,8 +40,8 @@ export const MovieDetails = () => {
               <p>{movie.overview}</p>
               <b>Genres:</b>
               <ul>
-                {movie.genres.map(({ name, index }) => (
-                  <li key={index}>{name}</li>
+                {movie.genres.map(({ name, id }) => (
+                  <li key={id}>{name}</li>
                 ))}
               </ul>
             </div>
