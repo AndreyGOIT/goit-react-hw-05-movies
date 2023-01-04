@@ -4,7 +4,7 @@ import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
 import styles from './MovieDetails.module.css';
 
-export const MovieDetails = () => {
+export default function MovieDetails() {
   const { moviesId } = useParams();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
@@ -60,4 +60,4 @@ export const MovieDetails = () => {
       )}
     </>
   );
-};
+}

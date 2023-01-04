@@ -1,7 +1,7 @@
 import FetchTrending from 'components/FetchTrending/FetchTrending';
 import styles from '../pages/Home.module.css';
 
-export const Home = () => {
+export default function Home() {
   return (
     <>
       <main>
@@ -10,4 +10,4 @@ export const Home = () => {
       </main>
     </>
   );
-};
+}

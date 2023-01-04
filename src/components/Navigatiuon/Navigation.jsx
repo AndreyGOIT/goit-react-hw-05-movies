@@ -1,7 +1,7 @@
 import { Link } from './Navigation.styled';
 import styles from './Navigation.module.css';
 
-export const Navigation = () => {
+export default function Navigation() {
   return (
     <>
       <nav>
@@ -19,4 +19,4 @@ export const Navigation = () => {
       </nav>
     </>
   );
-};
+}

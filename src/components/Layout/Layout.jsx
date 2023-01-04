@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Navigation } from '../Navigatiuon/Navigation';
+import Navigation from '../Navigatiuon/Navigation';
 
-export const Layout = () => {
+export default function Layout() {
   return (
     <>
       <header>
@@ -14,4 +14,4 @@ export const Layout = () => {
       {/* <footer>Footer</footer> */}
     </>
   );
-};
+}

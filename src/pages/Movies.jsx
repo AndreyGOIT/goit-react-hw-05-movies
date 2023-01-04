@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
 import styles from '../pages/Movies.module.css';
 
-export const Movies = () => {
+export default function Movies() {
   const [events, setEvents] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('eventname');
@@ -59,4 +59,4 @@ export const Movies = () => {
       )}
     </>
   );
-};
+}

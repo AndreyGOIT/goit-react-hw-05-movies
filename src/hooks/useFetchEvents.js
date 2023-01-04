@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchEventsById } from 'sevices/eventsAPI';
 
-export const useFetchEvent = () => {
+export default function useFetchEvent() {
   const [event, setEvent] = useState(null);
   const { eventId } = useParams();
   console.log(eventId);
@@ -12,4 +12,4 @@ export const useFetchEvent = () => {
   }, [eventId]);
 
   return event;
-};
+}

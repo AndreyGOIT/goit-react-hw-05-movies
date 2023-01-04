@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from 'sevices/eventsAPI';
 import styles from '../pages/Reviews.module.css';
 
-export const Reviews = () => {
+export default function Reviews() {
   const { moviesId } = useParams();
   const [reviewsArr, setReviewsArr] = useState(null);
 
@@ -30,4 +30,4 @@ export const Reviews = () => {
       )}
     </>
   );
-};
+}

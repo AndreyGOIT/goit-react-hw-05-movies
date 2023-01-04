@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { fetchMoviesCast } from 'sevices/eventsAPI';
 import styles from '../pages/Cast.module.css';
 
-export const Cast = () => {
+export default function Cast() {
   const { moviesId } = useParams();
   const [details, setDetails] = useState(null);
 
@@ -40,4 +40,4 @@ export const Cast = () => {
       )}
     </>
   );
-};
+}
