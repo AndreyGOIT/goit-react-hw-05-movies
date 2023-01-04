@@ -34,6 +34,29 @@ export default function Cast() {
               </li>
             ))}
           </ul>
+          <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
         </>
       ) : (
         <p>There are no any details, sorry.</p>
