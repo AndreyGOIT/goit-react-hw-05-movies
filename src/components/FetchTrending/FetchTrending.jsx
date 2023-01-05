@@ -18,7 +18,7 @@ export default function FetchTrending() {
         setMovies(response.data.results);
       });
   }, []);
-  console.log(movies);
+  // console.log(movies);
   return (
     <>
       {movies && (

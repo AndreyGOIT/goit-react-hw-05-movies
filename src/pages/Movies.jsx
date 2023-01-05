@@ -16,14 +16,12 @@ export default function Movies() {
     if (query === null || query === '') return;
 
     async function fetchEvent() {
-      console.log(query);
       const data = await fetchEventsByName(query);
-      console.log(data);
+
       setEvents(data.results);
     }
     fetchEvent();
   }, [query]);
-  // console.log(events);
 
   const handleSubmit = event => {
     event.preventDefault();

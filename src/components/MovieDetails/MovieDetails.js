@@ -13,7 +13,9 @@ export default function MovieDetails() {
   useEffect(() => {
     fetchEventsById(moviesId).then(setMovie);
   }, [moviesId]);
-  console.log(movie);
+
+  if (!movie) return;
+
   return (
     <>
       <button

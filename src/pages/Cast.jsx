@@ -11,9 +11,6 @@ export default function Cast() {
     fetchMoviesCast(moviesId).then(setDetails);
   }, [moviesId]);
 
-  console.log(details);
-  // const cast = details.cast;
-  // console.log(cast);
   return (
     <>
       {details ? (
