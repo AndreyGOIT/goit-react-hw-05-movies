@@ -1,3 +1,6 @@
 .list {
   column-count: 2;
 }
+.listItem {
+  margin-bottom: 10px;
+}

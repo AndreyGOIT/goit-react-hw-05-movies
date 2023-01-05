@@ -25,7 +25,7 @@ export default function FetchTrending() {
         <>
           <ol className={styles.list}>
             {movies.map(({ id, title }) => (
-              <li key={id.toString()}>
+              <li className={styles.listItem} key={id.toString()}>
                 <Link to={`/movies/${id}`} state={location.state}>
                   {title}
                 </Link>

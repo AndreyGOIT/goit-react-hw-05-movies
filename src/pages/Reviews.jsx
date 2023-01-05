@@ -17,7 +17,7 @@ export default function Reviews() {
       <hr />
       {reviewsArr ? (
         <>
-          <ul>
+          <ul className={styles.reviewList}>
             {reviewsArr.results.map(({ author, id, created_at, content }) => (
               <li className={styles.listEl} key={id.toString()}>
                 <h3>Author: {author}</h3>
@@ -26,17 +26,6 @@ export default function Reviews() {
               </li>
             ))}
           </ul>
-          <div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
         </>
       ) : (
         <p>We don't have any reviews for this movie.</p>

@@ -32,7 +32,7 @@ export default function Movies() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.formBlock} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           type="text"
@@ -45,9 +45,9 @@ export default function Movies() {
       </form>
       {events && (
         <>
-          <ol>
+          <ol className={styles.list}>
             {events.map(({ id, original_title }) => (
-              <li key={id}>
+              <li className={styles.listItem} key={id}>
                 <Link to={`/movies/${id}`} state={location.state}>
                   {original_title}
                 </Link>

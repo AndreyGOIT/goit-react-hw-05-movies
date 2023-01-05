@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0px;
+  margin-bottom: 500px;
 }
 .listElem {
   display: flex;
