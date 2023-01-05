@@ -1,7 +1,6 @@
 import FetchTrending from 'components/FetchTrending/FetchTrending';
-import styles from '../pages/Home.module.css';
-import image from '../images/kartinkin-com-p-kinematograf-art-art-krasivo-15.png';
-
+import styles from '../Home/Home.module.css';
+import image from '../../images/kartinkin-com-p-kinematograf-art-art-krasivo-15.png';
 export default function Home() {
   return (
     <>

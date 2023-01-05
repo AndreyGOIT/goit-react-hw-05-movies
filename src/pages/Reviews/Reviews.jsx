@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from 'sevices/eventsAPI';
-import styles from '../pages/Reviews.module.css';
+import styles from '../Reviews/Reviews.module.css';
 
 export default function Reviews() {
   const { moviesId } = useParams();

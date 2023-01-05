@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchMoviesCast } from 'sevices/eventsAPI';
-import styles from '../pages/Cast.module.css';
+import styles from '../Cast/Cast.module.css';
 
 export default function Cast() {
   const { moviesId } = useParams();

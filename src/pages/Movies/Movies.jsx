@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
-import styles from '../pages/Movies.module.css';
-import image from '../images/black-white-films.jpeg';
-import loupe from '../images/icon-loupe.png';
+import styles from '../../pages/Movies/Movies.module.css';
+import image from '../../images/black-white-films.jpeg';
+import loupe from '../../images/icon-loupe.png';
 
 export default function Movies() {
   const [events, setEvents] = useState([]);
