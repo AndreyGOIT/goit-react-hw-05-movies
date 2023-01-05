@@ -11,7 +11,7 @@ export default function Reviews() {
   useEffect(() => {
     fetchMoviesReviews(moviesId).then(setReviewsArr);
   }, [moviesId]);
-  // console.log(reviewsArr);
+  console.log(reviewsArr);
   return (
     <>
       <hr />

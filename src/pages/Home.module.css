@@ -1,3 +1,15 @@
 .title {
   font-size: large;
 }
+.mainHomePage {
+  display: flex;
+  gap: 10px;
+}
+.imgWrap {
+  padding-top: 15px;
+}
+.trendingListWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

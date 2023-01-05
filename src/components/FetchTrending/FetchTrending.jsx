@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import styles from './FetchTrending.module.css';
+import { PropTypes } from 'react';
 
 export default function FetchTrending() {
   // const keyAPI = '1eb36deae800d0e3d9fd1b0466458d26';
@@ -26,7 +27,11 @@ export default function FetchTrending() {
           <ol className={styles.list}>
             {movies.map(({ id, title }) => (
               <li className={styles.listItem} key={id.toString()}>
-                <Link to={`/movies/${id}`} state={location.state}>
+                <Link
+                  to={`/movies/${id}`}
+                  state={location.state}
+                  className={styles.link}
+                >
                   {title}
                 </Link>
               </li>
@@ -38,3 +43,7 @@ export default function FetchTrending() {
     </>
   );
 }
+
+// FetchTrending.propTypes = {
+//   movies: PropTypes.array,
+// };

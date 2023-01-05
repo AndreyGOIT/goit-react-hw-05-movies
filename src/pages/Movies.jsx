@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
 import styles from '../pages/Movies.module.css';
+import image from '../images/black-white-films.jpeg';
+import { PropTypes } from 'react';
 
 export default function Movies() {
   const [events, setEvents] = useState([]);
@@ -44,19 +46,34 @@ export default function Movies() {
         </button>
       </form>
       {events && (
-        <>
+        <div className={styles.seachList}>
           <ol className={styles.list}>
             {events.map(({ id, original_title }) => (
               <li className={styles.listItem} key={id}>
-                <Link to={`/movies/${id}`} state={location.state}>
+                <Link
+                  to={`/movies/${id}`}
+                  state={location.state}
+                  className={styles.link}
+                >
                   {original_title}
                 </Link>
               </li>
             ))}
           </ol>
+          <div className={styles.imgWrap}>
+            <img src={image} alt="BlackWhiteCinema" width="400" height="250" />
+          </div>
           <Outlet />
-        </>
+        </div>
       )}
     </>
   );
 }
+
+Movies.protoType = {
+  // fetchEventsByName: PropTypes.func,
+  // query: PropTypes.string,
+  // data: PropTypes.object,
+  // form: PropTypes.string,
+  // events: PropTypes.array,
+};

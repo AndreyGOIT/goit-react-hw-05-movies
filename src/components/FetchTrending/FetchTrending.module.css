@@ -1,6 +1,12 @@
 .list {
   column-count: 2;
+  column-gap: 35px;
+  padding-left: 20px;
 }
 .listItem {
   margin-bottom: 7px;
+}
+.link {
+  text-decoration: none;
+  color: black;
 }
