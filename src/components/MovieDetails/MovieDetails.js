@@ -55,7 +55,7 @@ export default function MovieDetails() {
             <Link to="reviews">Reviews</Link>
           </div>
           <Outlet />
-          <hr />
+          {/* <hr /> */}
         </>
       )}
     </>
