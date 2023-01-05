@@ -3,7 +3,6 @@ import { useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { fetchEventsById } from 'sevices/eventsAPI';
 import { Link } from 'react-router-dom';
 import styles from './MovieDetails.module.css';
-import { PropTypes } from 'react';
 
 export default function MovieDetails() {
   const { moviesId } = useParams();
@@ -62,7 +61,3 @@ export default function MovieDetails() {
     </>
   );
 }
-
-MovieDetails.propTypes = {
-  // movie: PropTypes.object,
-};

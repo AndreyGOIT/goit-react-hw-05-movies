@@ -1,15 +1,25 @@
 .title {
-  font-size: large;
+  font-size: xx-large;
 }
 .mainHomePage {
   display: flex;
-  gap: 10px;
-}
-.imgWrap {
-  padding-top: 15px;
-}
-.trendingListWrap {
-  display: flex;
   flex-direction: column;
   align-items: center;
+  /* gap: 10px; */
 }
+.mainPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10px;
+  /* border: 1rem solid gray; */
+}
+/* .imgWrap { */
+/* padding-top: 15px; */
+/* } */
+/* .trendingListWrap { */
+/* display: flex;
+  flex-direction: column;
+  align-items: center; */
+/* } */

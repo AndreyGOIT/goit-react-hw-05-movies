@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchEventsByName } from 'sevices/eventsAPI';
 import styles from '../pages/Movies.module.css';
 import image from '../images/black-white-films.jpeg';
-import { PropTypes } from 'react';
+import loupe from '../images/icon-loupe.png';
 
 export default function Movies() {
   const [events, setEvents] = useState([]);
@@ -42,7 +42,8 @@ export default function Movies() {
           placeholder="enter movie name"
         ></input>
         <button className={styles.button}>
-          <b>SEARCH</b>
+          <img src={loupe} alt="BlackWhiteCinema" width="30" height="30" />
+          <b className={styles.buttonText}>SEARCH</b>
         </button>
       </form>
       {events && (
@@ -60,7 +61,7 @@ export default function Movies() {
               </li>
             ))}
           </ol>
-          <div className={styles.imgWrap}>
+          <div>
             <img src={image} alt="BlackWhiteCinema" width="400" height="250" />
           </div>
           <Outlet />
@@ -69,11 +70,3 @@ export default function Movies() {
     </>
   );
 }
-
-Movies.protoType = {
-  // fetchEventsByName: PropTypes.func,
-  // query: PropTypes.string,
-  // data: PropTypes.object,
-  // form: PropTypes.string,
-  // events: PropTypes.array,
-};

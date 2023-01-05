@@ -6,12 +6,14 @@ export default function Home() {
   return (
     <>
       <main className={styles.mainHomePage}>
-        <div className={styles.imgWrap}>
-          <img src={image} alt="Cinema" width="400" height="350" />
-        </div>
-        <div className={styles.trendingListWrap}>
-          <h1 className={styles.title}>TOP 20 TRENDING FILMS TODAY</h1>
-          <FetchTrending />
+        <h1 className={styles.title}>TOP 20 TRENDING FILMS TODAY</h1>
+        <div className={styles.mainPageWrapper}>
+          <div className={styles.imgWrap}>
+            <img src={image} alt="Cinema" width="300" height="300" />
+          </div>
+          <div className={styles.trendingListWrap}>
+            <FetchTrending />
+          </div>
         </div>
       </main>
     </>
