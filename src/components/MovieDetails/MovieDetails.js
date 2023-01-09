@@ -1,24 +1,25 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
-import { fetchEventsById } from 'sevices/eventsAPI';
-import { Link } from 'react-router-dom';
-import styles from './MovieDetails.module.css';
+// import { useState, useEffect } from 'react';
+// import { useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
+// import { fetchEventsById } from 'sevices/eventsAPI';
+// import { Link } from 'react-router-dom';
+// import styles from './MovieDetails.module.css';
 
 export default function MovieDetails() {
-  const { moviesId } = useParams();
-  const [movie, setMovie] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const { moviesId } = useParams();
+  // const [movie, setMovie] = useState(null);
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
-  useEffect(() => {
-    fetchEventsById(moviesId).then(setMovie);
-  }, [moviesId]);
+  // useEffect(() => {
+  //   fetchEventsById(moviesId).then(setMovie);
+  // }, [moviesId]);
 
-  if (!movie) return;
+  // if (!movie) return;
 
   return (
     <>
-      <button
+      <p>TEST!!!</p>
+      {/* <button
         onClick={() => {
           navigate(location?.state?.from ?? '/');
         }}
@@ -59,7 +60,7 @@ export default function MovieDetails() {
           <Outlet />
           <hr />
         </>
-      )}
+      )} */}
     </>
   );
 }
