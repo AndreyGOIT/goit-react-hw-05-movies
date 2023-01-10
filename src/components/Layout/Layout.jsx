@@ -8,7 +8,6 @@ export default function Layout() {
         <Navigation />
       </header>
       <Outlet />
-      {/* <footer>Footer</footer> */}
     </>
   );
 }
