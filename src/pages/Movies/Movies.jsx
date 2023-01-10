@@ -1,28 +1,27 @@
-// import { useState, useEffect } from 'react';
-// import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
-// import { fetchEventsByName } from 'sevices/eventsAPI';
+import { useState, useEffect } from 'react';
+import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
+import { fetchEventsByName } from 'sevices/eventsAPI';
 import styles from '../../pages/Movies/Movies.module.css';
-// import image from '../../images/black-white-films.jpeg';
+import image from '../../images/black-white-films.jpeg';
 import loupe from '../../images/icon-loupe.png';
 
 export default function Movies() {
-  // const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  // const query = searchParams.get('eventname');
+  const query = searchParams.get('eventname');
 
-  // const location = useLocation;
+  const location = useLocation;
 
-  // useEffect(() => {
-  //   if (query === null || query === '') return;
+  useEffect(() => {
+    if (query === null || query === '') return;
 
-  //   async function fetchEvent() {
-  //     const data = await fetchEventsByName(query);
+    async function fetchEvent() {
+      const data = await fetchEventsByName(query);
 
-  //     setEvents(data.results);
-  //   }
-  //   fetchEvent();
-  // }, [query]);
+      setEvents(data.results);
+    }
+    fetchEvent();
+  }, [query]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -46,7 +45,7 @@ export default function Movies() {
           <b className={styles.buttonText}>SEARCH</b>
         </button>
       </form>
-      {/* {events && (
+      {events && (
         <div className={styles.seachList}>
           <ol className={styles.list}>
             {events.map(({ id, original_title }) => (
@@ -66,7 +65,7 @@ export default function Movies() {
           </div>
           <Outlet />
         </div>
-      )} */}
+      )}
     </>
   );
 }

@@ -1,22 +1,21 @@
-// import { useState } from 'react';
-// import { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { fetchMoviesReviews } from 'sevices/eventsAPI';
-// import styles from '../Reviews/Reviews.module.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchMoviesReviews } from 'sevices/eventsAPI';
+import styles from '../Reviews/Reviews.module.css';
 
 export default function Reviews() {
-  // const { moviesId } = useParams();
-  // const [reviewsArr, setReviewsArr] = useState(null);
+  const { moviesId } = useParams();
+  const [reviewsArr, setReviewsArr] = useState(null);
 
-  // useEffect(() => {
-  //   fetchMoviesReviews(moviesId).then(setReviewsArr);
-  // }, [moviesId]);
+  useEffect(() => {
+    fetchMoviesReviews(moviesId).then(setReviewsArr);
+  }, [moviesId]);
   // console.log(reviewsArr);
   return (
     <>
-      <p>TEST!!!</p>
       <hr />
-      {/* {reviewsArr ? (
+      {reviewsArr ? (
         <>
           <ul className={styles.reviewList}>
             {reviewsArr.results.map(({ author, id, created_at, content }) => (
@@ -30,7 +29,7 @@ export default function Reviews() {
         </>
       ) : (
         <p>We don't have any reviews for this movie.</p>
-      )} */}
+      )}
     </>
   );
 }
