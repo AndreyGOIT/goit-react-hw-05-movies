@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 // import { Container } from './App.styled';
 import { lazy } from 'react';
+import Layout from './Layout/Layout';
 
-const Layout = lazy(() => import('./Layout/Layout'));
+// const Layout = lazy(() => import('./Layout/Layout'));
 const Home = lazy(() => import('../pages/Home/Home'));
 const Movies = lazy(() => import('../pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../pages/Cast/Cast'));
 const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 
-// import Layout from './Layout/Layout';
 // import Home from '../pages/Home/Home';
 // import Movies from 'pages/Movies/Movies';
 // import MovieDetails from './MovieDetails/MovieDetails';
