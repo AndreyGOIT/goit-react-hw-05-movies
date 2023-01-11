@@ -33,11 +33,14 @@ export async function fetchEventsById(id) {
 }
 
 export async function fetchEventsByName(query) {
-  const response = await axios(`https://api.themoviedb.org/3/search/movie`, {
-    params: {
-      query,
-    },
-  });
+  const response = await axios(
+    `https://api.themoviedb.org/3/search/movie/?api_key=1eb36deae800d0e3d9fd1b0466458d26`,
+    {
+      params: {
+        query,
+      },
+    }
+  );
   return response.data;
 }
 
